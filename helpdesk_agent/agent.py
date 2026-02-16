@@ -1,4 +1,23 @@
+from typing import Any
 from google.adk.agents.llm_agent import Agent
+
+
+# There are 3 types of tools 
+# Built-in tools: These are tools that come with the ADK, like a web search tool, big query, vertex ai rag etc.
+# Custom tools: These are tools that you can build yourself
+# Third-party tools: These are tools Open APIs and MCP tools that you can integrate with the ADK.
+
+def lookup_user(email: str) -> dict[str, Any]:
+    """Mock function to lookup user information based on email."""
+    # In a real implementation, this would query a database or an API.
+    return {"status": "success", "user": {"name": "John Doe", "email": email, "department": "Engineering"}}
+
+# The user sends a message 
+# The LLM reads the instructions, tool defenitions, and the user message, and decides what to do.
+# LLM decided to use a specific tool
+# ADK executes the tool with the parameters specified by the LLM
+# The tool executes and returns the result to the LLM
+# The LLM uses the tool result to generate a response to the user
 
 root_agent = Agent(
     model="gemini-2.5-flash",
