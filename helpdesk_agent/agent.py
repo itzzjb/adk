@@ -4,9 +4,9 @@ from google.adk.agents.llm_agent import Agent
 # an inmemomy user database
 _FAKE_USER_DB: Dict[str, Dict[str, Any]] = {
     "john.doe@company.com": {"name": "John Doe", "department": "Engineering", "status": "active"},
-    "jane.smith@company.com": {"name": "Jane Smith", "department": "Marketing", "status": "active"},
+    "jane.smith@company.com": {"name": "Jane Smith", "department": "Marketing", "status": "inactive"},
     "joe.brown@company.com": {"name": "Joe Brown", "department": "Sales", "status": "inactive"},
-    "bob.johnson@company.com": {"name": "Bob Johnson", "department": "HR", "status": "active"},
+    "bob.johnson@company.com": {"name": "Bob Johnson", "department": "HR", "status": "locked"},
     "sarah.wilson@company.com": {"name": "Sarah Wilson", "department": "Finance", "status": "active"}
 }
 
