@@ -1,6 +1,6 @@
 from google.adk.agents.llm_agent import Agent
 from google.adk.tools.function_tool import FunctionTool
-from tools.helpdesk_tools import (
+from .tools.helpdesk_tools import (
     lookup_user_impl,
     check_service_status_impl,
     create_ticket_impl,
