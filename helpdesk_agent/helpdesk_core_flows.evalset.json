@@ -1,0 +1,144 @@
+{
+  "eval_set_id": "helpdesk_core_flows",
+  "name": "helpdesk_core_flows",
+  "eval_cases": [
+    {
+      "eval_id": "casef6b2f7",
+      "conversation": [
+        {
+          "invocation_id": "e-c5ca4cfa-9f76-48bb-8f9b-28ea39475115",
+          "user_content": {
+            "parts": [
+              {
+                "text": "My email says my account is locked. My email is carol@example.com"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "I see that your account, carol@example.com, is indeed locked.\n\nTo unlock your account, you will need to contact IT directly. Would you like me to open a ticket for this issue?",
+                "thought_signature": "CtYCAXLI2nzIMgSmvh6Dir-Rf9W8Mj8qv1icAFHS7QvDUpof6r9jwYdMMF6upQT5EWhMs1scecEu9AM6mQy6m9b27418ze3czZrIjDa1mjMJa22xzgIr4vtdkoM6xd43Se9De64yzzHo7flmiyC2arPGCn3uC4Jp1I8jpftu5see83R8RKLtIH-WTorCrMwA6EE5TlUTCybV49Uu5pDoF_P4xnhEihJ2U_nJc9uzgiX0UeN3P2UZSFFK1VmsTQf47tJa7bUw9nk87hr_LOtSdkAjtt34l5QNoILKekunPoPiso6V0PMASUJBDriG1pE5WggpuvN0MAmPaWgFhesEfN7sj_gIfwsxJPLskdnnSCAgdWAfVwgCQn1tDXqrEjb_BIGGW-g9VPl0X7d3QQ3j21lmbpErNWj0_aiRJXpKy-5m5n6g8bqtlElsMi4T127aj7E_X02rtPl4"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "helpdesk_root_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-ade961af-07f0-4641-bc84-7e7c492053cc",
+                        "args": {
+                          "email": "carol@example.com"
+                        },
+                        "name": "lookup_user_impl"
+                      },
+                      "thought_signature": "CrICAXLI2nw9URghE1fjPl6llGS8dpIuPcKivQVYeTou6as2Aw0GfAeAO5tmX-ceY1gthemy9AtImKZfhzj-OWSSyqDG_FF3EbmnjDIau-Kyuaw_nL2YnCz4x9O9DN2c8bvb0GM_yXTIcaoLVw3Cv7KulsU7f79KR42DoaLIKhfjwMBWpWJi_T0mzCFxjDiROUO_ZKNMUyd4hVLuuKzmC3axPvrzOo7kBHmRlA6VYkGIDdRZ7Nz3S6OcsvPUceI3jzRuKaXDlFaNoTT86EwP6jy9Ac4uTCMfyCnQrBCSYjqDYgGDFUnkM-QaPOL1hjuQTxqcnEqQUsKDutUPXTkLp_4GyqtL7Stw2PZmyugWsrv_KjkNtQtch9R_hXvbvF_wgwao6ju49AwAKbuN8V8zbauoiXF0"
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "helpdesk_root_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-ade961af-07f0-4641-bc84-7e7c492053cc",
+                        "name": "lookup_user_impl",
+                        "response": {
+                          "status": "success",
+                          "user": {
+                            "email": "carol@example.com",
+                            "name": "Carol Lee",
+                            "department": "HR",
+                            "status": "locked"
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1765839373.697946
+        },
+        {
+          "invocation_id": "e-73630138-6224-4708-97d2-275a62c8424a",
+          "user_content": {
+            "parts": [
+              {
+                "text": "My whole team can’t use VPN this morning. We’re all blocked. My email is alice@example.com"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "I understand your whole team is having trouble with the VPN this morning. I've checked the VPN service status, and it appears to be degraded. This means there are ongoing issues affecting the service.\n\nSince this is affecting your entire team and the service is degraded, I can open a ticket to report this wider issue. Would you like me to do that?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "helpdesk_root_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-bfee77b3-ab7e-423a-83f7-d19d1308a013",
+                        "args": {
+                          "service_name": "vpn"
+                        },
+                        "name": "check_service_status_impl"
+                      },
+                      "thought_signature": "CrsDAXLI2nw1zTX-dqrm05elP-l0lYlHX6LDKLFYD38A-YZv-qXS4RGSi--OPnRig78_FS4UXWPIXc9Nc-xyjdAfsT3QajJxdONzk9sKe1SKg4RI7FBvf5helbuQqeLpymqdHTY3XOgcLQHswYIZQ2NwKHeSaORnlhEz56h5iu5_HasY5_1i1p-b1nYmg3LpHy4LIz-h4y-o4O8DBYP6_foKswIa6QM4apu5KsdUCCYzacZu37io37AABvyREpcJqqKKYNIGGuO-VjjKsq_2BTUCE3ggp13H5L0jqgttMHqMoHI9jJ0wIJ4sUGrrc9aDPOGG3dHs1sSYf7Ock98BVMYZMLb1Se19j_cynGHczfB7p2jDBUjf-odFK6EzLjtIbtUqtiIeqz9WhB5SlMAQ5p39fSsqeUDygwB7QRkBxT8Yp5vdnJHYVzDn_LxVyg4WZ0O1NFw0rT87NMbvBEt22UoHv1h-Ko6bBRHu9rbGI3rFD9SW0vCmoAFpahCdAa5iy6qPszG3erHpS51wWhaFR6H9qfuD3AYrSKUQZKmaRpyikzH8aqqZJSNpepVZJjZ2pCJJA0y-bI2XlsSZu8Q="
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "helpdesk_root_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-bfee77b3-ab7e-423a-83f7-d19d1308a013",
+                        "name": "check_service_status_impl",
+                        "response": {
+                          "status": "success",
+                          "service": "vpn",
+                          "status_text": "degraded"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1765839464.297969
+        }
+      ],
+      "session_input": {
+        "app_name": "helpdesk_agent",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1765839591.803958
+    }
+  ],
+  "creation_timestamp": 1765839413.289784
+}
