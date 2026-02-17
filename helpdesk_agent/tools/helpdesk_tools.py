@@ -4,7 +4,7 @@ import uuid
 
 from pydantic import BaseModel, Field
 
-from schemas.ticket import Ticket
+from ..schemas.ticket import Ticket
 
 
 _FAKE_USER_DIRECTORY: Dict[str, Dict[str, Any]] = {
